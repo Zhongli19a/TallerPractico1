@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Libros</title>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1 class="text-center">Información del libro</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-12">
+                <form action="javascript:void(0)" name="frlibro" id="frlibro" class="col s12">
+                    <div class="input-group mb-4">
+                        <input type="number" placeholder="Ingrese el ID del libro" name="id"
+                            class="form-control" onkeydown="filtro()" required/>
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="text" placeholder="Ingrese el titulo del libro" class="form-control"
+                            name="txttitulo" id="titulo" required maxlength="60"/>
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" placeholder="Ingrese el nombre del autor"
+                            name="txtnombre" required maxlength="60"/>
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="text" placeholder="Ingrese los apellidos del autor" 
+                            class="form-control" name="txtapellidos" id="apellidos" required maxlength="60" />
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="text" placeholder="Ingrese la categoria del libro" class="form-control" name="categoria"
+                             required maxlength="60"/>
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="number" id="precio" class="form-control" placeholder="Ingrese el precio del libro"
+                            name="txtprecio" onkeydown="filtro()" step="any" min="1" required />
+                    </div>
+                        <p class="input-group mb-4">Ingrese la imagen de la portada:</p>
+                    <div class="input-group mb-4">
+                        <input type="file" id="imagen" name="imagen"  accept="image/*" required />
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" name="mostrar" id="mostrar" required 
+                            class="btn btn-success w-25 col-md-12">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <hr>
+            <h1 class="text-center">Lista de libros</h1>
+            <table class="table table-hover">
+                <thead>
+                </thead>
+                <tbody id="infolibros" style="display: inline-block; vertical-align: middle;">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="js/ejercicio2.js"></script>
+</html>
